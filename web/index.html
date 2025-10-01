@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tablón de Tareas</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* Contenedor principal */
+    .board {
+      display: flex;
+      flex-wrap: wrap; /* Permite que las columnas salten */
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    /* Columnas */
+    .column {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 1rem;
+      flex: 1 1 300px; /* Se adaptan y mínimo 300px */
+    }
+
+    .column h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .task {
+      background: #e9ecef;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      border-radius: 4px;
+    }
+
+    /* Responsive: cambiar orden en pantallas pequeñas */
+    @media (max-width: 768px) {
+      .todo { order: 1; }
+      .doing { order: 2; }
+      .done { order: 3; }
+    }
+
+    @media (max-width: 480px) {
+      /* Ejemplo: mostrar "Doing" primero en móviles muy pequeños */
+      .doing { order: 1; }
+      .todo { order: 2; }
+      .done { order: 3; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Tablón de Tareas</h1>
+
+  <div class="board">
+    <div class="column todo">
+      <h2>To Do</h2>
+      <div class="task">Tarea 1</div>
+      <div class="task">Tarea 2</div>
+      <div class="task">Tarea 3</div>
+    </div>
+
+    <div class="column doing">
+      <h2>Doing</h2>
+      <div class="task">Tarea en progreso 1</div>
+      <div class="task">Tarea en progreso 2</div>
+    </div>
+
+    <div class="column done">
+      <h2>Done</h2>
+      <div class="task">Tarea completada 1</div>
+      <div class="task">Tarea completada 2</div>
+    </div>
+  </div>
+</body>
+</html>
