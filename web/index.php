@@ -170,4 +170,4 @@ if ($pdo) {
 </body>
 </html>
 
-<!-- Comentario de prueba -->
+<!-- Comentario de pruea -->
